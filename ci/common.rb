@@ -69,7 +69,6 @@ end
 # [15.39/15]....
 def can_skip?
   return false, [] unless travis_pr?
-
   modified_checks = []
   puts "Comparing #{ENV['TRAVIS_COMMIT']} with #{ENV['TRAVIS_BRANCH']}"
   git_output = `git diff-tree --no-commit-id --name-only -r #{ENV['TRAVIS_COMMIT']} #{ENV['TRAVIS_BRANCH']}`
